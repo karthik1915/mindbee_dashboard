@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.613.0",
     "@aws-sdk/lib-dynamodb": "^3.613.0",
+    "@netlify/functions": "^2.8.1",
     "@reduxjs/toolkit": "^2.2.6",
     "@tanstack/react-table": "^8.19.2",
     "@tanstack/router-devtools": "^1.44.0",

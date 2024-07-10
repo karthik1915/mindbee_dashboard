@@ -27,5 +27,5 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src"]
+  "include": ["src","netlify/functions/**/*.ts"]
 }

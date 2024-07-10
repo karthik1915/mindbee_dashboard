@@ -1,17 +1,12 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import dynamoDb from "@/api/awsConfig";
-import { ScanCommand } from "@aws-sdk/lib-dynamodb";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import { ApiDataType } from "@/types/apiDataType";
 
 // Async thunk to fetch data from DynamoDB
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
-  const params = {
-    TableName: "mindbee",
-  };
-
-  const command = new ScanCommand(params);
-  const data = await dynamoDb.send(command);
-  return data.Items as ApiDataType[];
+  const response = await fetch("/.netlify/functions/fetchData");
+  const data = await response.json();
+  return data as ApiDataType[];
 });
 
 export interface DataState {
